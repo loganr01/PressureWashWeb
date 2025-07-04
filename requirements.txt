@@ -33,8 +33,6 @@ Pygments==2.18.0
 pyinstaller==6.13.0
 pyinstaller-hooks-contrib==2025.3
 python-dateutil==2.9.0.post0
-pywin32==306
-pywin32-ctypes==0.2.3
 pyzmq==26.2.0
 setuptools==79.0.1
 six==1.16.0
