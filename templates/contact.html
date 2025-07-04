@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="page-content d-flex justify-content-center">
+    <div class="contact-form w-100" style="max-width: 600px;">
+      <h2 class="mb-4 text-center">Contact Us</h2>
+
+      {% if success %}
+        <div class="alert alert-success">Thanks! We'll get back to you soon.</div>
+      {% endif %}
+
+      <form method="POST">
+        <div class="mb-3">
+          <input class="form-control bg-dark text-light border-secondary" name="name" placeholder="Your Name..." required>
+        </div>
+        <div class="mb-3">
+          <input class="form-control bg-dark text-light border-secondary" name="phone" type="tel" placeholder="Your Phone Number..." required>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control bg-dark text-light border-secondary" name="message" rows="4" placeholder="Message..." required></textarea>
+        </div>
+        <button class="btn btn-success w-100" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
