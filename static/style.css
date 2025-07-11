@@ -118,12 +118,12 @@ textarea::placeholder {
   background-color: #218838;
 }
 
-/* Footer */
 footer {
   background-color: #1f1f1f;
   color: #aaa;
   border-top: 1px solid #333;
 }
+
 
 /* Form Containers */
 .contact-form,
