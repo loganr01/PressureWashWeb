@@ -1,25 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="page-content d-flex justify-content-center">
-    <div class="contact-form w-100" style="max-width: 600px;">
-      <h2 class="mb-4 text-center">Contact Us</h2>
+<div class="d-flex justify-content-center align-items-center pt-5 mt-5 mb-5" style="min-height: 90vh;">
+  <div class="contact-form p-4 rounded shadow" style="background-color: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px);">
+    <h2 class="text-center mb-4">Contact TrueWash Exterior</h2>
+    <p class="text-center mb-4">Get a fast, no-obligation estimate! Include your address to skip a step and speed up the process.</p>
 
-      {% if success %}
-        <div class="alert alert-success">Thanks! We'll get back to you soon.</div>
-      {% endif %}
+    {% if success %}
+      <div class="alert alert-success text-center">Message sent successfully!</div>
+    {% endif %}
 
-      <form method="POST">
-        <div class="mb-3">
-          <input class="form-control bg-dark text-light border-secondary" name="name" placeholder="Your Name..." required>
-        </div>
-        <div class="mb-3">
-          <input class="form-control bg-dark text-light border-secondary" name="phone" type="tel" placeholder="Your Phone Number..." required>
-        </div>
-        <div class="mb-3">
-          <textarea class="form-control bg-dark text-light border-secondary" name="message" rows="4" placeholder="Message..." required></textarea>
-        </div>
-        <button class="btn btn-success w-100" type="submit">Send Message</button>
-      </form>
-    </div>
+    <form method="POST" action="/contact">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" name="name" placeholder="First Last" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone:</label>
+        <input type="text" class="form-control" name="phone" placeholder="(555) 123-4567" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="address" class="form-label">Address (optional):</label>
+        <input type="text" name="address" class="form-control" placeholder="123 Main St, Waco TX">
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message:</label>
+        <textarea name="message" rows="5" class="form-control" placeholder="Optional: Describe the surfaces you want cleaned."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Send</button>
+    </form>
   </div>
+</div>
 {% endblock %}
